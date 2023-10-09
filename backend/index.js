@@ -53,9 +53,9 @@ app.post("/signup", async (req, res) => {
   }
 });
 
-app.get("/register", async (req, res) => {
+app.post("/register", async (req, res) => {
   // const { name, email, age, gender, contact } = req.body;
-  const email = "testuser@gmail.com";
+  const email = "testuser1@gmail.com";
   const name = "Test User";
   const age = "20";
   const gender = "Male";
