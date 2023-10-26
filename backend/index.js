@@ -34,9 +34,9 @@ app.get("/", (req, res) => {
 });
 
 app.post("/signup", async (req, res) => {
-  // const { email, password } = req.body;
-  const email = "testuser@gmail.com";
-  const password = "testing123";
+  const { email, password } = req.body;
+  // const email = "testuser@gmail.com";
+  // const password = "testing123";
   const isNewUser = await User.findOne({ email });
   if (isNewUser) {
     res.json("User already exists").status(400);
@@ -54,12 +54,12 @@ app.post("/signup", async (req, res) => {
 });
 
 app.post("/register", async (req, res) => {
-  // const { name, email, age, gender, contact } = req.body;
-  const email = "testuser1@gmail.com";
-  const name = "Test User";
-  const age = "20";
-  const gender = "Male";
-  const contact = "9876543210";
+  const { name, email, age, gender, contact } = req.body;
+  // const email = "testuser1@gmail.com";
+  // const name = "Test User";
+  // const age = "20";
+  // const gender = "Male";
+  // const contact = "9876543210";
   try {
     const userRegister = await User.updateOne(
       { email },
